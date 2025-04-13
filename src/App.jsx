@@ -11,10 +11,10 @@
  * - Modification    :
  **/
 import { Routes, Route } from 'react-router-dom';
-import FormFishType from './pages/formFishType';
 import FormAddFish from './pages/formAddFish';
 import FishList from './pages/listFish';
-import TypeFishList from './pages/listTypeFish';
+import FormAddVariant from './pages/formAddVariant';
+import VariantList from './pages/listVariant';
 import FormAddUser from './pages/formAddUser';
 import ListUser from './pages/listUser';
 import ListCustomer from './pages/listCustomer';
@@ -32,10 +32,11 @@ function App() {
         <Sidebar />
         <div className="page-content">
           <Routes>
-            <Route path="/formFishType" element={<FormFishType />} />{' '}
+            {' '}
             <Route path="/formAddFish" element={<FormAddFish />} />{' '}
-            <Route path="/listTypeFish" element={<TypeFishList />} />{' '}
             <Route path="/listFish" element={<FishList />} />{' '}
+            <Route path="/formAddVariant" element={<FormAddVariant />} />{' '}
+            <Route path="/listVariant" element={<VariantList />} />{' '}
             <Route path="/formAddUser" element={<FormAddUser />} />{' '}
             <Route path="/listUser" element={<ListUser />} />{' '}
             <Route path="/listCustomer" element={<ListCustomer />} />{' '}
