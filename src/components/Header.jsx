@@ -10,59 +10,68 @@
  * - Author          : AbigaelHOMENYA
  * - Modification    :
  **/
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Container, Nav, Dropdown, Image } from 'react-bootstrap';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import api from '../services/api';
 
-function Header({ onMenuClick }) {
+const Header = () => {
+  const navigate = useNavigate(); //  useNavigate pour la redirection
+
+  const handleLogout = async () => {
+    try {
+      await api.post('/auth/logout');
+      // Après la déconnexion, redirige vers la page de connexion
+      navigate('/auth/login'); // Utilisation de navigate pour rediriger
+    } catch (error) {
+      console.error('Erreur lors de la déconnexion:', error);
+    }
+  };
+
   return (
     <>
-      <header className="topbar">
+      {/* Header Principal */}
+      <header className="topbar py-2 bg-light border-bottom">
         <div className="container-xxl">
-          <div className="navbar-header">
-            <div className="d-flex align-items-center gap-2">
-              <div className="topbar-item">
-                <button
-                  type="button"
-                  className="button-toggle-menu"
-                  onClick={onMenuClick}
-                >
-                  <iconify-icon
-                    icon="iconamoon:menu-burger-horizontal"
-                    className="fs-22"
-                  />
-                </button>
-              </div>
+          <div className="d-flex flex-wrap justify-content-between align-items-center">
+            <div className="flex-grow-1 text-center d-lg-block d-none">
+              <h5 className="mb-0 fw-semibold">
+                BIENVENUE SUR VOTRE TABLEAU DE BORD
+              </h5>
             </div>
 
-            <div className="dropdown topbar-item">
+            {/* Menu Utilisateur */}
+            <div className="dropdown">
               <a
                 type="button"
-                className="topbar-button"
+                className="d-flex align-items-center"
                 id="page-header-user-dropdown"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <span className="d-flex align-items-center">
-                  <img
-                    className="rounded-circle"
-                    width="32"
-                    src="assets/images/users/user2.png"
-                    alt="avatar-3"
-                  />
-                </span>
+                <img
+                  className="rounded-circle"
+                  width="32"
+                  height="32"
+                  src="assets/images/users/user2.png"
+                  alt="avatar-3"
+                />
               </a>
-              <div className="dropdown-menu dropdown-menu-end">
+
+              <div
+                className="dropdown-menu dropdown-menu-end"
+                aria-labelledby="page-header-user-dropdown"
+              >
                 <h6 className="dropdown-header">Bienvenue Admin!</h6>
-                <a className="dropdown-item" href="pages-profile.html">
+                <a className="dropdown-item" href="#">
                   <i className="bx bx-user-circle text-muted fs-18 align-middle me-1"></i>
                   <span className="align-middle">Profile</span>
                 </a>
-
                 <div className="dropdown-divider my-1"></div>
                 <a
                   className="dropdown-item text-danger"
-                  href="auth-signin.html"
+                  href="#!"
+                  onClick={handleLogout}
                 >
                   <i className="bx bx-log-out fs-18 align-middle me-1"></i>
                   <span className="align-middle">Déconnexion</span>
@@ -74,5 +83,6 @@ function Header({ onMenuClick }) {
       </header>
     </>
   );
-}
+};
+
 export default Header;
