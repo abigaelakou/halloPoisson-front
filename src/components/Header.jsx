@@ -34,9 +34,9 @@ const Header = () => {
         <div className="container-xxl">
           <div className="d-flex flex-wrap justify-content-between align-items-center">
             <div className="flex-grow-1 text-center d-lg-block d-none">
-              <h5 className="mb-0 fw-semibold">
+              <h4 className="mb-0 fw-semibold text-dark mt-2">
                 BIENVENUE SUR VOTRE TABLEAU DE BORD
-              </h5>
+              </h4>
             </div>
 
             {/* Menu Utilisateur */}
