@@ -1,3 +1,15 @@
+/**
+    * @description      : 
+    * @author           : AbigaelHOMENYA
+    * @group            : 
+    * @created          : 14/04/2025 - 09:35:21
+    * 
+    * MODIFICATION LOG
+    * - Version         : 1.0.0
+    * - Date            : 14/04/2025
+    * - Author          : AbigaelHOMENYA
+    * - Modification    : 
+**/
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&amp;display=swap);
 :root {
@@ -24969,3 +24981,30 @@ p.no-span::after {
 }
 
 /*# sourceMappingURL=app.min.css.map */
+
+/* CSS SIDEBAR MENU*/
+
+.nav-link.active,
+.sub-nav-link.active {
+  background-color: #fdfd96;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.menu-title {
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+
+.sub-nav-link {
+  margin-left: 10px;
+  padding-left: 15px;
+  font-size: 0.9rem;
+  color: #333;
+  transition: background 0.2s ease;
+}
+
+.sub-nav-link:hover {
+  background-color: #fff8dc;
+  border-radius: 5px;
+}
