@@ -55,12 +55,20 @@ function SidebarContent() {
     <div className="scrollbar p-3" data-simplebar>
       <div className="logo-box mb-4 text-center">
         <a href="#" className="logo-dark">
-          <img src="assets/images/logoN.jpg" className="logo-lg" alt="logo" style={{ maxWidth: '150px' }} />
+          <img
+            src="assets/images/logoN.jpg"
+            className="logo-lg"
+            alt="logo"
+            style={{ maxWidth: '150px' }}
+          />
         </a>
       </div>
       <ul className="navbar-nav" id="navbar-nav">
         <li className="nav-item mb-3">
-          <a className={`nav-link d-flex align-items-center ${location.pathname === '/' ? 'active' : ''}`} href="/">
+          <a
+            className={`nav-link d-flex align-items-center ${location.pathname === '/Dashboard' ? 'active' : ''}`}
+            href="/Dashboard"
+          >
             <iconify-icon icon="iconamoon:home-duotone" width="20" />
             <span className="ms-3 text-black">Tableau de bord</span>
           </a>
