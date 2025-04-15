@@ -16,6 +16,7 @@ const Footer = () => {
       <footer className="footer bg-light py-3">
         <div className="container">
           <div className="row justify-content-center">
+            {/* Contenu Footer */}
             <div className="col-12 col-md-8 text-center">
               <p>
                 <script> document.write(new Date().getFullYear()) </script> 2025{' '}
