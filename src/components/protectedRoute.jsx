@@ -21,7 +21,7 @@ const ProtectedRoute = ({ children }) => {
     return <Navigate to="/connexion" replace />;
   }
 
-  // Si connecté, affiche le contenu protégé
+  // Si connecté, affichage du contenu protégé
   return children;
 };
 
