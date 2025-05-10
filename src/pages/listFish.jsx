@@ -302,7 +302,7 @@ const FishList = () => {
             <Form.Group controlId="formImg" className="mb-3">
               <Form.Label> Image </Form.Label>{' '}
               <Form.Control
-                type="text"
+                type="file"
                 name="img"
                 value={currentFish.img}
                 onChange={handleModalChange}
